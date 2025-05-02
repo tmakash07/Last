@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akash - Aspiring Biostatistician</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFH0QMEJKF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KFH0QMEJKF');
+  </script>
   <style>
    body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,13 +22,13 @@
    }
 
    a {
-    color: #bb86fc;
+    color: #69f0ae;
     text-decoration: none;
     transition: color 0.3s ease;
    }
 
    a:hover {
-    color: #8a3ffc;
+    color: #00e676;
    }
 
    #background-video-container {
@@ -78,12 +86,12 @@
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 160, 0, 0.5);
     transition: background-color 0.3s ease;
    }
 
    nav li a:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 120, 0, 0.7);
    }
 
    main {
@@ -105,8 +113,8 @@
    }
 
    section h2 {
-    color: #bb86fc;
-    border-bottom: 2px solid #bb86fc;
+    color: #69f0ae;
+    border-bottom: 2px solid #69f0ae;
     padding-bottom: 0.5em;
     margin-bottom: 1em;
    }
@@ -121,13 +129,13 @@
    }
 
    section a {
-    color: #03dac6;
+    color: #b2ff59;
     text-decoration: none;
     transition: color 0.3s ease;
    }
 
    section a:hover {
-    color: #018786;
+    color: #76ff03;
    }
 
    footer {
@@ -159,6 +167,23 @@
     height: 100%;
     border: none;
     border-radius: 8px;
+   }
+
+   #visit-counter {
+    position: fixed; /* Or absolute, depending on where you want it */
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    z-index: 1000; /* Ensure it's on top of other elements */
+   }
+
+   #visit-count {
+    font-weight: bold;
+    color: #69f0ae;
    }
   </style>
  </head>
@@ -240,15 +265,37 @@
 
    <section id="currently-enjoying">
     <h2>Currently Enjoying</h2>
-    <p> Naruhina :)</p>
-    <div class="video-container">
-     <iframe src="https://player.vimeo.com/video/1080740718?context=Vimeo%5CController%5CApi%5CResources%5CVideoController.&h=45ee2b1c4a&s=828dd4b8227d1685ee8e9b9cb02a824918bc6974_1746266697" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    </div>
+    <p>brooo i hate the author </p>
+<div style="padding:100% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1080855152?h=117b7e34b6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="338029c4c3e1cb8a2607e7e2177092d4_720w"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
    </section>
   </main>
 
   <footer>
-   <p>© 2025 Akash. All rights reserved.</p>
+   <p>© 2025 meaw. All rights reserved.</p>
   </footer>
+
+  <div id="visit-counter">মোট ভিজিট: <span id="visit-count">0</span></div>
+
+  <script>
+   function updateTotalVisitCount() {
+    if (typeof(Storage) !== "undefined") {
+     let totalVisitCount = localStorage.getItem("totalVisitCount");
+
+     if (totalVisitCount) {
+      totalVisitCount = Number(totalVisitCount) + 1;
+     } else {
+      totalVisitCount = 1;
+     }
+
+     localStorage.setItem("totalVisitCount", totalVisitCount);
+     document.getElementById("visit-count").textContent = totalVisitCount;
+    } else {
+     document.getElementById("visit-counter").textContent = "আপনার ব্রাউজার ভিজিট কাউন্টার সাপোর্ট করে না।";
+    }
+   }
+
+   window.onload = updateTotalVisitCount;
+  </script>
  </body>
- </html>
+
+ </html
